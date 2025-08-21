@@ -1,30 +1,20 @@
-// حفظ الاسم في LocalStorage وعرضه
-const nameForm = document.getElementById('nameForm');
-const savedNameP = document.getElementById('savedName');
-const callApiBtn = document.getElementById('callApi');
-const apiResult = document.getElementById('apiResult');
+# api/hello.py
+from flask import Flask, jsonify, request
 
-function loadSavedName() {
-  const name = localStorage.getItem('demo:name');
-  if (name) savedNameP.textContent = `الاسم المحفوظ: ${name}`;
-}
+app = Flask(__name__)
 
-nameForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = new FormData(nameForm).get('name');
-  localStorage.setItem('demo:name', name);
-  savedNameP.textContent = `الاسم المحفوظ: ${name}`;
-});
+@app.route('/api/hello', methods=['GET', 'POST'])
+def hello():
+    # مثــال: استقبال اسم بالـ JSON في POST
+    if request.method == 'POST':
+        payload = request.get_json(silent=True) or {}
+        name = payload.get('name', 'مستخدم')
+    else:
+        name = request.args.get('name', 'مستخدم')
 
-callApiBtn.addEventListener('click', async () => {
-  apiResult.textContent = '...جاري النداء';
-  try {
-    const res = await fetch('/api/hello');
-    const data = await res.json();
-    apiResult.textContent = JSON.stringify(data, null, 2);
-  } catch (e) {
-    apiResult.textContent = 'تعذّر الاتصال بـ /api/hello. تأكد من النشر على Vercel.';
-  }
-});
+    return jsonify({
+        'ok': True,
+        'message': f'أهلاً {name}! هذه استجابة من بايثون (Flask) على Vercel.'
+    })
 
-loadSavedName();
+# هام: لا تشغل app.run هنا — Vercel يدير الخادم تلقائياً.
