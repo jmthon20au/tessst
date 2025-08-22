@@ -1,36 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>موقع تجريبي — Vercel</title>
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
-  <main class="container">
-    <h1>مرحباً 👋</h1>
-    <p class="muted">هذا موقع تجريبي بسيط مرفوع على Vercel.</p>
-
-    <section class="card">
-      <h2>تخزين محلي (LocalStorage)</h2>
-      <form id="nameForm">
-        <label for="name">اكتب اسمك:</label>
-        <input id="name" name="name" type="text" placeholder="الاسم" required />
-        <button type="submit">حفظ</button>
-      </form>
-      <p id="savedName" class="hint"></p>
-    </section>
-
-    <section class="card">
-      <h2>تجربة API (بايثون)</h2>
-      <button id="callApi">نداء /api/hello</button>
-      <pre id="apiResult" class="pre"></pre>
-      <p class="muted small">عند النشر على Vercel، هذا الزر يستدعي دالة بايثون من المجلد <code>api/hello.py</code>.</p>
-    </section>
-
-    <footer class="footer">© 2025 — مشروع تجريبي</footer>
-  </main>
-
-  <script src="/script.js"></script>
-</body>
-</html>
