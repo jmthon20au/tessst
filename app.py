@@ -241,7 +241,7 @@ async def view_products(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     """Displays all products in the inventory."""
     products = load_data()["products"]
     if not products:
-    	message_text = "✨ لا توجد منتجات متوفرة حالياً في المخزن. ✨"
+    	message_text = "✨  لا توجد منتجات متوفرة حالياً في المخزن. ✨"
     else:
     	message_text = "🛍️  قائمة المنتجات المتوفرة في المخزن: ✨\n\n"
     	for i, product in enumerate(products):
