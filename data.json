@@ -1,0 +1,26 @@
+{
+  "settings": {
+    "low_stock_threshold": 20
+  },
+  "admins": [
+    6454550864
+  ],
+  "products": [
+    {
+      "companyName": "سجاد محمد",
+      "productId": "ss",
+      "quantity": 120002,
+      "price": 14.0,
+      "category": "جدران",
+      "imageUrl": "https://i.postimg.cc/jd0S3tDh/2c7bbeb42fa01dcc040161e00544e1e7.jpg"
+    },
+    {
+      "companyName": "علي",
+      "productId": "A",
+      "quantity": 20,
+      "price": 12.0,
+      "category": "مطابخ",
+      "imageUrl": "ت"
+    }
+  ]
+}
