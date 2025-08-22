@@ -243,7 +243,7 @@ async def view_products(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     if not products:
     	message_text = "✨ لا توجد منتجات متوفرة حالياً في المخزن. ✨"
     else:
-    	message_text = "🛍️ قائمة المنتجات المتوفرة في المخزن: ✨\n\n"
+    	message_text = "🛍️  قائمة المنتجات المتوفرة في المخزن: ✨\n\n"
     	for i, product in enumerate(products):
     		message_text += (
     	f"*{i+1}. اسم الشركة:* {product['companyName']}\n"
